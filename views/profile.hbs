@@ -2,16 +2,14 @@
 
 
 <div>
-  {{#each newUser}}
-<h1>{{this.name}}</h1>
+<h1>{{newUser.name}}</h1>
 
-<p>{{this.email}}</p>
-{{#if this.registration === true}}
+<p>{{newUser.email}}</p>
+{{#if newUser.isCarOwner}}
 <p>Ваши объявления</p>
 {{else}}
 <p>У вас нет объявлений</p>
 {{/if}}
-{{/each}}
 </div>
 
 <div>
