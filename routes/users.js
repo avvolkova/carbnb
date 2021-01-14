@@ -7,7 +7,6 @@ router.get("/login", function (req, res, next) {
   res.render("login");
 });
 
-
 router.get("/signup", function (req, res, next) {
   res.render("signup");
 });
@@ -22,7 +21,7 @@ router.post("/signup", async function (req, res) {
     isCarOwner: false,
   });
   await newUser.save();
-  res.redirect(`/profile/${newUser.id}`);
+  res.render(`profile`, { newUser });
 });
 
 module.exports = router;
