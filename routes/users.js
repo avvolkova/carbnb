@@ -2,12 +2,10 @@ const express = require("express");
 const router = express.Router();
 const UserSchema = require("../models/user");
 
-/* клик по кнопке profile - открытие формы входа */
+/* клик по кнопки регистрации. */
 router.get("/login", function(req, res, next) {
     res.render("login");
 });
-
-/* клик по кнопке регистрация в форме входа - открытие формы регистрации */
 
 router.get("/signup", function(req, res, next) {
     res.render("signup");
@@ -15,6 +13,7 @@ router.get("/signup", function(req, res, next) {
 
 /* добавление юзера в базу */
 router.post("/signup", async function(req, res) {
+    console.log(req.body);
     let newUser = new UserSchema({
         name: req.body.name,
         password: req.body.password,
@@ -24,9 +23,22 @@ router.post("/signup", async function(req, res) {
     await newUser.save();
     req.session.userID = newUser._id;
     req.session.username = newUser.name;
-
-    res.redirect(`/profile/${newUser.id}`);
+    res.redirect(`/users/${newUser._id}`);
 });
 
+router.post("/login", async function(req, res, next) {
+    let username = req.body.nameUser;
+    let userDB = await UserSchema.findOne({ email: username });
+    let id = userDB._id;
+    req.session.userID = userDB._id;
+    req.session.username = userDB.name;
+    res.redirect(`/users/${userDB._id}`);
+});
+
+router.get("/:id", async function(req, res, next) {
+    let id = req.params.id;
+    let user = await UserSchema.findById(id);
+    res.render("profile", { user });
+});
 
 module.exports = router;
