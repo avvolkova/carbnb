@@ -1,0 +1,20 @@
+<img src="" alt="здесь должно быть фото">
+
+
+<div>
+<h1>{{user.name}}</h1>
+
+<p>{{user.email}}</p>
+{{#if user.isCarOwner}}
+<p>Ваши объявления</p>
+{{else}}
+<p>У вас нет объявлений</p>
+{{/if}}
+</div>
+
+<div>
+  здесь будут отзывы
+</div>
+
+
+<button><a href="/create">Создать объявление</a></button>

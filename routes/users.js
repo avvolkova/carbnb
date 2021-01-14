@@ -21,7 +21,24 @@ router.post("/signup", async function(req, res) {
         isCarOwner: false,
     });
     await newUser.save();
-    res.redirect(`/profile/${newUser.id}`);
+    req.session.userID = newUser._id;
+    req.session.username = newUser.name;
+    res.redirect(`/users/${newUser._id}`);
+});
+
+router.post("/login", async function(req, res, next) {
+    let username = req.body.nameUser;
+    let userDB = await UserSchema.findOne({ email: username });
+    let id = userDB._id;
+    req.session.userID = userDB._id;
+    req.session.username = userDB.name;
+    res.redirect(`/users/${userDB._id}`);
+});
+
+router.get("/:id", async function(req, res, next) {
+    let id = req.params.id;
+    let user = await UserSchema.findById(id);
+    res.render("profile", { user });
 });
 
 module.exports = router;
