@@ -29,6 +29,9 @@ app.use((req, res, next) => {
     if (req.session.userID) {
         res.locals.userID = req.session.userID // записываем в локалс имя юзера из сессии
     }
+    if (req.session.username) {
+        res.locals.username = req.session.username // записываем в локалс имя юзера из сессии
+    }
     next();
 });
 
