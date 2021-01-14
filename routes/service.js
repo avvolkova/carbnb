@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 /* осуществляет поиск и отрисовывает страницу с результатами поиска */
 router.post('/search', async function(req, res, next) {
     const city = req.body.city;
+    console.log(req.body);
     const articles = await Article.find({ nameAuto: 'mazda' })
         // const findByCity = async(city) => {
         //     return await Article.find({ city })
