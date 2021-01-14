@@ -11,7 +11,7 @@ const User = require("../models/user");
 
  
  const user = new User ({name:'VANYA' })
- const user2= new User({name:"Kolya"})
+ const user2= new User({name:"ARTEM!!!!!!"})
  user.save()
  user2.save()
 // const diet1 = new Diet({ name: "Медоедская" });

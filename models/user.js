@@ -3,14 +3,14 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    // required: true,
   },
   img: {
     type: String,
   },
   registration: {
     type: Date,
-    required: true,
+    // required: true,
   },
   isCarOwner: {
     type: Boolean,

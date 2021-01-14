@@ -1,6 +1,5 @@
 const mongoose =require('mongoose');
-const user = require('./article');
-
+ 
 const ArticleSchema = new mongoose.Schema({
   nameAuto:{
     type:String,
@@ -23,7 +22,7 @@ const ArticleSchema = new mongoose.Schema({
   required:true,
   },
   mileage:{
-  type:String
+  type:Number
   },
   isActive: {
     type: Boolean,
