@@ -15,4 +15,4 @@
  //      mileage: '340000',
  //      isActive: true,
  //      city: "Moscow"
- //  }).save(
+ //  }).save()
