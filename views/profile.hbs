@@ -1,0 +1,22 @@
+<img src="" alt="здесь должно быть фото">
+
+
+<div>
+  {{#each newUser}}
+<h1>{{this.name}}</h1>
+
+<p>{{this.email}}</p>
+{{#if this.registration === true}}
+<p>Ваши объявления</p>
+{{else}}
+<p>У вас нет объявлений</p>
+{{/if}}
+{{/each}}
+</div>
+
+<div>
+  здесь будут отзывы
+</div>
+
+
+<button><a href="/create">Создать объявление</a></button>
