@@ -5,12 +5,20 @@ const UserSchema = new mongoose.Schema({
     type: String,
     // required: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
   img: {
     type: String,
   },
   registration: {
     type: Date,
-    // required: true,
+    default: Date.now
   },
   isCarOwner: {
     type: Boolean,
@@ -19,7 +27,7 @@ const UserSchema = new mongoose.Schema({
 
 module.exports = mongoose.model("User", UserSchema);
 
-// 1. Имя 
+// 1. Имя
 // 2. Фотография
 // 3. Дата регистрации
 // 4. Является ли владельцем(если да,то)

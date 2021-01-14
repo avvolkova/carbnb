@@ -1,17 +1,18 @@
  const mongoose = require('mongoose');
- const Article = require("../models/article");
-const User = require("../models/user");
+ const Article = require('../models/article');
 
+ module.exports = mongoose.connect('mongodb+srv://Alexandr:12345@cluster0.2ixnd.mongodb.net/carBnB?retryWrites=true&w=majority', {
+     useNewUrlParser: true,
+     useFindAndModify: true,
+     useUnifiedTopology: true,
+     useFindAndModify: false
+ });
 
- mongoose.connect('mongodb+srv://Alexandr:12345@cluster0.2ixnd.mongodb.net/carBnB?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-
- 
- const user = new User ({name:'VANYA' })
- const user2= new User({name:"ARTEM!!!!!!"})
- user.save()
- user2.save()
-// const diet1 = new Diet({ name: "Медоедская" });
+ //  const auto = new Article({
+ //      nameAuto: 'mazda',
+ //      transmission: 'gg',
+ //      yearAuto: 2012,
+ //      mileage: '340000',
+ //      isActive: true,
+ //      city: "Moscow"
+ //  }).save(
