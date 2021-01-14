@@ -24,7 +24,7 @@
     <section class="jumbotron text-center">
       <form class="container" action="/service/search" method="POST">
         <input type="text" name="city" id="search">
-        <input name="" id="picker"> // 2 calendars
+        <input name="datepicker" id="picker"> // 2 calendars
         <button>go</button>
       </form>
     </section>
@@ -43,6 +43,8 @@
   <script>
     const picker = new Litepicker({
         element: document.getElementById('picker'),
-        singleMode: true});
+        singleMode: false,
+        format: 'DD/MM/YYYY'
+        });
   </script>
 </html>
