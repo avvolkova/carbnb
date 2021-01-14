@@ -1,40 +1,28 @@
-const mongoose =require('mongoose');
-const user = require('./user');
+const mongoose = require("mongoose");
 
-const ArticleSchema = new mongoose.Schema({
-  nameAuto:{
-    type:String,
-    required:true,
+const UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
   },
   img: {
     type: String,
   },
-  carOwner: {
-    type: mongoose.Schema.Types.ObjectId, 
+  registration: {
+    type: Date,
     required: true,
-    ref:"User",
   },
-  transmission: {
-    type: String, 
-    // required: true,
-  },
-  yearAuto:{
-  type:Number,
-  required:true,
-  },
-  mileage:{
-  type:String
-  },
-  isActive: {
+  isCarOwner: {
     type: Boolean,
   },
 });
 
-module.exports = mongoose.model('Article', ArticleSchema);
+module.exports = mongoose.model("User", UserSchema);
 
-// 1. Название авто
-// 2. Фотографии от владельцев
-// 3. Ссылка на владельца авто
-// 4. Трансмиссия
-// 5. Год производства
-// 6. Пробег
+// 1. Имя 
+// 2. Фотография
+// 3. Дата регистрации
+// 4. Является ли владельцем(если да,то)
+
+// 5. Ссылка на объявление пользователя
+// 6. Ссылка на отзывы
