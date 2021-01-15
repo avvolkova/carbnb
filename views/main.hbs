@@ -24,27 +24,34 @@
     <section class="jumbotron text-center">
       <form class="container" action="/service/search" method="POST">
         <input type="text" name="city" id="search">
-        <input name="datepicker" id="picker"> 
+        <input name="datepicker" id="picker" autocomplete="off"> 
         <button>go</button>
       </form>
     </section>
 
-
-
   </main>
-
  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
 
+{{!-- Ниже - скрипты для реализации выбора даты и поиска по дате --}}
   <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
   <script>
     const picker = new Litepicker({
         element: document.getElementById('picker'),
         singleMode: false,
-        format: 'DD/MM/YYYY'
+        format: 'YYYY-MM-DD\\T03:00:00'
         });
   </script>
+
+  <script src="moment.js"></script>
+  <script src="moment-range.js"></script>
+  <script>
+    const Moment = require('moment');
+    const MomentRange = require('moment-range');
+    const moment = MomentRange.extendMoment(Moment);
+  </script>
+
 </html>
