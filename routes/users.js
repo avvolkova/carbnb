@@ -12,12 +12,7 @@ const check = (req, res, next) => {
   }
 };
 
-router.post("/articles", async function (req, res) {
-  let carId = req.body._id;
-  let carDB = await ArticleSchema.findOne({ _id: carId });
-  req.params.id = carDB._id
-  res.render("articles");
-});
+
 
 /* клик по кнопке регистрации. */
 router
