@@ -1,16 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const UserSchema = require("../models/user");
 
-/* клик по кнопки регистрации. */
+const UserSchema = require("../models/user");
+/* функция для разлогирования */
+const check = (req, res, next) => {
+    console.log(req.session);
+    if (req.session.userID) {
+        next();
+    } else {
+        res.redirect("/");
+    }
+};
+/* клик по кнопке регистрации. */
 router.get("/login", function(req, res, next) {
     res.render("login");
 });
-
 router.get("/signup", function(req, res, next) {
     res.render("signup");
 });
-
 /* при нажатии на кнопку "регистрация" происходит добавление юзера в базу */
 router.post("/signup", async function(req, res) {
     console.log(req.body);
@@ -25,7 +32,6 @@ router.post("/signup", async function(req, res) {
     req.session.username = newUser.name;
     res.redirect(`/`);
 });
-
 router.post("/login", async function(req, res, next) {
     let username = req.body.nameUser;
     let userDB = await UserSchema.findOne({ name: username });
@@ -35,10 +41,16 @@ router.post("/login", async function(req, res, next) {
     res.redirect(`/`);
 });
 
-router.get("/:id", async function(req, res, next) {
+/* роутер разлогирования */
+router.get("/logout", async function(req, res) {
+    await req.session.destroy();
+    res.redirect("/service");
+});
+
+
+router.get("/:id", check, async function(req, res, next) {
     let id = req.params.id;
     let user = await UserSchema.findById(id);
     res.render("profile", { user });
 });
-
 module.exports = router;
