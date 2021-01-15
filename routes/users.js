@@ -29,7 +29,6 @@ router.post("/signup", async function(req, res) {
 router.post("/login", async function(req, res, next) {
     let username = req.body.nameUser;
     let userDB = await UserSchema.findOne({ email: username });
-    let id = userDB._id;
     req.session.userID = userDB._id;
     req.session.username = userDB.name;
     res.redirect(`/users/${userDB._id}`);
