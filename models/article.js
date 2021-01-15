@@ -31,10 +31,7 @@ const ArticleSchema = new mongoose.Schema({
     isActive: {
         type: Boolean,
     },
-    busyFrom: {
-        type: Array,
-    },
-    busyUntil: {
+    busyIntervals: {
         type: Array,
     }
 });

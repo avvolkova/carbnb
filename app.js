@@ -62,4 +62,14 @@ app.use(function(err, req, res, next) {
     res.render("error");
 });
 
+
+//temp!!!
+// app.get('/articles', function(req, res, next) {
+//     res.render('articles');
+// });
+
+// app.get('/articles', function(req, res, next) {
+//     res.render('articles');
+// });
+
 module.exports = app;

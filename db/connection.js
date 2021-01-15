@@ -17,6 +17,8 @@ module.exports = mongoose.connect(
 //     isActive: true,
 //     city: "Moscow",
 //     carOwner: "60004818eea1f1774b452abf",
-//     busyFrom: ['13/01/2021', '23/01/2021'],
-//     busyUntil: ['21/01/2021', '25/01/2021'],
+//     busyIntervals: [
+//         ['2021/01/12', '2021/01/15'],
+//         ['2021/01/25', '22021/01/28'],
+//     ],
 // }).save();
