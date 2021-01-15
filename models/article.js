@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const user = require('./article');
 
 const ArticleSchema = new mongoose.Schema({
-    nameAuto: {
+    carName: {
         type: String,
         required: true,
     },
-    img: {
-        type: String,
+    carImg: {
+        img: String,
     },
     carOwner: {
         type: mongoose.Schema.Types.ObjectId,
@@ -21,7 +21,7 @@ const ArticleSchema = new mongoose.Schema({
         type: String,
         // required: true,
     },
-    yearAuto: {
+    productionYear: {
         type: Number,
         required: true,
     },
@@ -31,6 +31,12 @@ const ArticleSchema = new mongoose.Schema({
     isActive: {
         type: Boolean,
     },
+    busyFrom: {
+        type: Array,
+    },
+    busyUntil: {
+        type: Array,
+    }
 });
 
 module.exports = mongoose.model('Article', ArticleSchema);

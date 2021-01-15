@@ -29,6 +29,9 @@ app.use((req, res, next) => {
     if (req.session.userID) {
         res.locals.userID = req.session.userID // записываем в локалс имя юзера из сессии
     }
+    if (req.session.username) {
+        res.locals.username = req.session.username // записываем в локалс имя юзера из сессии
+    }
     next();
 });
 
@@ -37,6 +40,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
@@ -58,5 +63,6 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render("error");
 });
+
 
 module.exports = app;
