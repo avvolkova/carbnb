@@ -16,12 +16,13 @@ router.get('/', function(req, res, next) {
 /* осуществляет поиск и отрисовывает страницу с результатами поиска */
 router.post('/search', async function(req, res, next) {
     const { city, datepicker } = req.body;
+    console.log( city, datepicker );
     const articlesByCity = await Article.find({ city });
-    const rentStart = datepicker.split(' - ')[0];
-    const rentEnd = datepicker.split(' - ')[1];
-    console.log('datepicker---->', datepicker);
-    const carAvalabilityArray = articlesByCity.map(car => [...car.busyFrom, ...car.busyUntil]);
-    console.log('arr---->', carAvalabilityArray);
+    // const rentStart = datepicker.split(' - ')[0];
+    // const rentEnd = datepicker.split(' - ')[1];
+    // console.log('datepicker---->', datepicker);
+    // const carAvalabilityArray = articlesByCity.map(car => [...car.busyFrom, ...car.busyUntil]);
+    // console.log('arr---->', carAvalabilityArray);
     // const carAvalabilityTime = articlesByCity.map(car => {
     //     car.busyFrom = new Date(car.busyFrom[0].replace(/(\d{2})\/(\d{2})\/(\d{4})/, "$3/$2/$1"));
     //     // return [car.busyFrom, car.busyUntil]
