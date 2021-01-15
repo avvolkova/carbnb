@@ -440,6 +440,7 @@ h6 {
   border-width: 2px;
 } */
 .works {
+  
   padding: 2.8rem 0;
 }
 .works__nav {
@@ -493,9 +494,43 @@ h6 {
   margin: 0 -1rem 2.8rem;
 }
 .portfolio__col {
+  display: flex;
   flex-basis: 33.33333%;
   padding: 1rem;
 }
 .text-center {
+  margin-bottom: 30px;
+  margin-top: 100px;
   text-align: center;
+}
+
+.autorization {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form-control{
+margin:10px;
+border-radius:10px ;
+width: 300px;
+height: 50px;
+text-align: center;
+}
+/* 
+.textInput{
+text;
+
+} */
+.form-label-group{
+  text-align: center;
+}
+
+.btn-lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
