@@ -1,12 +1,37 @@
-{{!-- search!
-<ul>
-  {{#each articlesByCity}}
-  <li>{{this.carName}}</li>
-  {{/each}}
-</ul>
-<button><a href="/article"></a></button> --}}
 
-<div class="works">
+<div>
+ <div class="works">
+    <div class="container">
+        <div class="portfolio">
+  {{#each articlesByCity}}
+            <div class="portfolio__col">
+                <div class="work">
+                    <img class="work__image" src={{this.img}}>
+                    <div class="work__content">
+                        <div class="work__title">
+                            {{this.carName}}
+                            <!-- <time class="work__date" datetime="2019-11-22 19:00">2019</time> -->
+                        </div>
+                        <div class="work__cat">Трансмиссия: {{this.transmission}}</div>
+                        <div class="work__cat">Год: {{this.productionYear}}</div>
+                        <div class="work__cat">Город: {{this.city}}</div>
+                        {{#if this.isActive}}
+                        Свободна
+            <button><a href="/service/{{ this._id }}">Забронировать</a></button>
+                        {{else}}
+                        Занята
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+  {{/each}}
+            </div>
+            </div>
+            </div>
+
+
+
+{{!-- <div class="works">
     <div class="container">
         <div class="portfolio">
             <div class="portfolio__col">
@@ -88,4 +113,4 @@
             </div>
         </div><!-- /.portfolio -->
     </div><!-- /.container -->
-</div><!-- /.works -->
+</div><!-- /.works --> --}}

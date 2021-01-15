@@ -36,6 +36,9 @@ const ArticleSchema = new mongoose.Schema({
     },
     busyUntil: {
         type: Array,
+    },
+    img: {
+      type: String
     }
 });
 
