@@ -435,6 +435,7 @@ h6 {
   border-width: 2px;
 }
 .works {
+  
   padding: 2.8rem 0;
 }
 .works__nav {
@@ -488,6 +489,7 @@ h6 {
   margin: 0 -1rem 2.8rem;
 }
 .portfolio__col {
+  display: flex;
   flex-basis: 33.33333%;
   padding: 1rem;
 }
