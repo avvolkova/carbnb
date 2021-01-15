@@ -1,96 +1,91 @@
-{{!-- <!DOCTYPE html>
+{{!--
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    {{>header}}
-    {{{body}}}
-  </body>
+
+<head>
+  <title>{{title}}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  {{>header}}
+  {{{body}}}
+</body>
+
 </html> --}}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=!, initial-scale=1.0" />
-    <link rel="stylesheet" href="../stylesheets/style.css" />
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__inner">
-          <div class="user">
-            <div class="user_avatar">
-              <img src="..//core-css-layout-site/images/ElbrusLogo.svg" />
-            </div>
-            <div class="user_content">
-              <div class="user_name"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="/" role="tab"
-          aria-controls="pills-home" aria-selected="true">CarBnb</a></div>
-              <div class="user_prof">Сайт для поиска машины</div>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=!, initial-scale=1.0" />
+  <link rel="stylesheet" href="../stylesheets/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="user">
+          <div class="user_avatar">
+            <img src="../img/ElbrusLogo.svg" />
           </div>
-
-          <nav class="nav">
-            {{#if username}} 
-        <a class="btn" id="pills-profile-tab" data-toggle="pill" href="/users/{{userID}}" role="tab"
-          aria-controls="pills-profile" aria-selected="false">{{username}}</a>
-      <a class="nav_link" href="/users/logout">Выйти</a>
-            {{else}}
-            <a class="nav_link" href="/users/login">Вход</a>
-            <!-- <a class="nav_link" href="#t1">Регистрация</a> -->
-            <!-- <a class="btn" href="" target="_blank">Вход</a> -->
-            <a class="btn" href="/users/signup" target="_blank">Регистрация</a>
-{{/if }}
-          </nav>
-        </div>
-      </div>
-    </header>
-
-          {{{body}}}
-    <footer class="footer">
-      <div class="container">
-        <div class="footer_inner">
-          <div class="footer_credits">
-            <div class="footer_copy">&copy; 2021</div>
-            <div class="footer_social">
-              <a href="https://instagram.com" target="_blank">
-                <img
-                  src="images/instagram.svg"
-                  width="15"
-                  height="21"
-                  alt="Insta"
-                />
-              </a>
-              <a href="https://vk.com" target="_blank">
-                <img src="images/vk.svg" width="15" height="21" alt="VK" />
-              </a>
-              <a href="https://www.linkedin.com" target="_blank">
-                <img
-                  src="images/linkedin.svg"
-                  width="15"
-                  height="21"
-                  alt="Linkedin"
-                />
-              </a>
-            </div>
+          <div class="user_content">
+            <div class="user_name"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="/" role="tab"
+                aria-controls="pills-home" aria-selected="true">CarBnb</a></div>
+            <div class="user_prof">Сайт для поиска машины</div>
           </div>
-
-          <nav class="footer_nav">
-            <a class="footer_nav-link" href="#">TO HOME</a>
-          </nav>
         </div>
+
+        <nav class="nav">
+          {{#if username}}
+          <a class="btn" id="pills-profile-tab" data-toggle="pill" href="/users/{{userID}}" role="tab"
+            aria-controls="pills-profile" aria-selected="false">{{username}}</a>
+          <a class="nav_link" href="/users/logout">Выйти</a>
+          {{else}}
+          <a class="nav_link" href="/users/login">Вход</a>
+          <!-- <a class="nav_link" href="#t1">Регистрация</a> -->
+          <!-- <a class="btn" href="" target="_blank">Вход</a> -->
+          <a class="btn" href="/users/signup" target="_blank">Регистрация</a>
+          {{/if }}
+        </nav>
       </div>
-    </footer>
-  </body>
+    </div>
+  </header>
+
+  {{{body}}}
+  <footer class="footer">
+    <div class="container">
+      <div class="footer_inner">
+        <div class="footer_credits">
+          <div class="footer_copy">&copy; 2021</div>
+          <div class="footer_social">
+            <a href="https://instagram.com" target="_blank">
+              <img src="/img/instagram.svg" width="25" height="21" alt="Insta" />
+            </a>
+            <a href="https://vk.com" target="_blank">
+              <img src="/img/vk.svg" width="25" height="21" alt="VK" />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+              <img src="/img/linkedin.svg" width="25" height="21" alt="Linkedin" />
+            </a>
+          </div>
+        </div>
+
+        {{!-- <nav class="footer_nav">
+          <a class="footer_nav-link" href="#">TO HOME</a>
+        </nav> --}}
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>

@@ -31,32 +31,45 @@
       }
     }
   </style>
-  
+
 </head>
 
-  <form class="form-signin" action="/users/login" method="post">
+
+{{!-- <form class="transparent">
+  <div class="form-inner">
+    <h3>Регистрация</h3>
+    <label for="username">Имя пользователя</label>
+    <input type="text" id="username">
+    <label for="password">Пароль</label>
+    <input id="password" type="password">
+    <input type="checkbox" id="custom-checkbox">
+    <label for="custom-checkbox">Запомнить меня</label>
+    <input type="submit" value="Отправить">
+  </div>
+</form> --}}
+
+<form class="form-signin" action="/users/login" method="post">
+  <div class="autorization">
     <div class="text-center mb-4">
       <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
+
+    </div>
+    <div class="autorization">
+      <div class="form-label-group">
+        <label class ="textInput" for="inputEmail">Имя пользователя<br></label>
+        <input name="nameUser" type="text" id="inputEmail" class="form-control" placeholder="Введите имя" required
+          autofocus>
+      </div>
+
+      <div class="form-label-group">
+        <label class ="textInput" for="inputPassword">Пароль<br></label>
+        <input name="passwordUser" type="password" id="inputPassword" class="form-control" placeholder="Пароль"
+          required>
+      </div>
+
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+    </div>
+  </div>
+</form>
  
-    </div>
-
-    <div class="form-label-group">
-      <label for="inputEmail">имя пользователя</label>
-      <input name="nameUser" type="text" id="inputEmail" class="form-control" placeholder="имя пользователя" required autofocus>
-    </div>
-
-    <div class="form-label-group">
-      <label for="inputPassword">пароль</label>
-      <input name="passwordUser" type="password" id="inputPassword" class="form-control" placeholder="пароль" required>
-    </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> запомнить меня
-      </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" >Войти</button>
-    <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
-  </form>
-<a href="/users/signup">Регистрация</a>
-

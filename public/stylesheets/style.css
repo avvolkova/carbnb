@@ -1,5 +1,6 @@
 body {
   font-family: "Montserrat", sans-serif;
+  min-height: 10vh;
 }
 *,
 *:before,
@@ -209,11 +210,14 @@ h6 {
 
 .footer {
   background-color: black;
-  padding: 0.33rem 0;
+  padding: 0.6rem;
+  position: absolute;
+  /* top: 100%; */
+  width: 99%;
 }
 .footer_inner {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-around; */
 }
 .footer_nav {
   display: flex;
@@ -254,7 +258,7 @@ h6 {
   text-decoration: none;
 }
 
-html {
+/* html {
   font-size: 15px;
 }
 body {
@@ -433,9 +437,8 @@ h6 {
   font-size: 0.94rem;
   font-weight: 700;
   border-width: 2px;
-}
+} */
 .works {
-  
   padding: 2.8rem 0;
 }
 .works__nav {
@@ -494,5 +497,68 @@ h6 {
   padding: 1rem;
 }
 .text-center {
+  margin-bottom: 30px;
+  margin-top: 100px;
   text-align: center;
+}
+
+.autorization {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form-control {
+  margin: 10px;
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+}
+/* 
+.textInput{
+text;
+
+} */
+.form-label-group {
+  text-align: center;
+}
+
+.btn-lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.inputMain {
+  border:solid 2px black;
+  border-radius: 16px;
+  box-shadow: 0px 0px 10px black;
+  width: 350px;
+  background: white;
+  color: black;
+  height: 45px;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
+  text-align: center;
+  margin-right: 1%;
+  margin-bottom: 47%;
+}
+
+.buttonMain {
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px rgb(61, 1, 1);
 }
