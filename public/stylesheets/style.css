@@ -67,6 +67,7 @@ h6 {
 }
 .nav_link {
   margin-left: 2rem;
+  margin: 2%;
   position: relative;
   font-size: 0.93rem;
   color: #000000;
@@ -562,3 +563,5 @@ text;
   border-radius: 8px;
   box-shadow: 0 4px rgb(61, 1, 1);
 }
+
+
