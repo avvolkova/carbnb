@@ -19,10 +19,12 @@ router
         res.render("login");
     })
     .post(async function(req, res, next) {
-        let { username, password } = req.body;
-        let userDB = await UserSchema.findOne({ name: username });
+        let { name, password } = req.body;
+        console.log(req.body);
+        let userDB = await UserSchema.findOne({ name });
+        console.log(userDB);
         if (userDB) {
-            if (password === userDB.password) {
+            if (password == userDB.password) {
                 req.session.userID = userDB._id;
                 req.session.username = userDB.name;
                 res.redirect(`/`);
@@ -50,7 +52,6 @@ router.post('/signup', async function(req, res) {
             img: '../public/img/user-avatar.jpg',
         });
         await newUser.save();
-        console.log(newUser);
         req.session.userID = newUser._id;
         req.session.username = newUser.name;
         res.redirect(`/`);
