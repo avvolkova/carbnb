@@ -9,8 +9,8 @@ const MomentRange = require("moment-range");
 const moment = MomentRange.extendMoment(Moment);
 
 /* отрисовывает главную страницу */
-router.get("/", function (req, res, next) {
-  res.render("main");
+router.get("/", function(req, res, next) {
+    res.render("main");
 });
 
 /* осуществляет поиск и отрисовывает страницу с результатами поиска */
@@ -53,6 +53,13 @@ router.post('/search', async function(req, res, next) {
 
     res.render('search', { articlesByCity });
 });
+
+router.get("/:id", async function(req, res, next) {
+    const id = req.params.id;
+    const article = await Article.findById(id);
+    res.render("article", { article });
+});
+
 
 
 
