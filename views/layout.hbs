@@ -31,61 +31,11 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="header__inner">
-        <div class="user">
-          <div class="user_avatar">
-            <img src="../img/ElbrusLogo.svg" />
-          </div>
-          <div class="user_content">
-            <div class="user_name"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="/" role="tab"
-                aria-controls="pills-home" aria-selected="true">CarBnb</a></div>
-            <div class="user_prof">Сайт для поиска машины</div>
-          </div>
-        </div>
-
-        <nav class="nav">
-          {{#if username}}
-          <a class="btn" id="pills-profile-tab" data-toggle="pill" href="/users/{{userID}}" role="tab"
-            aria-controls="pills-profile" aria-selected="false">{{username}}</a>
-          <a class="nav_link" href="/users/logout">Выйти</a>
-          {{else}}
-          <a class="nav_link" href="/users/login">Вход</a>
-          <!-- <a class="nav_link" href="#t1">Регистрация</a> -->
-          <!-- <a class="btn" href="" target="_blank">Вход</a> -->
-          <a class="btn" href="/users/signup" target="_blank">Регистрация</a>
-          {{/if }}
-        </nav>
-      </div>
-    </div>
-  </header>
+  {{>header}}
 
   {{{body}}}
-  <footer class="footer">
-    <div class="container">
-      <div class="footer_inner">
-        <div class="footer_credits">
-          <div class="footer_copy">&copy; 2021</div>
-          <div class="footer_social">
-            <a href="https://instagram.com" target="_blank">
-              <img src="/img/instagram.svg" width="25" height="21" alt="Insta" />
-            </a>
-            <a href="https://vk.com" target="_blank">
-              <img src="/img/vk.svg" width="25" height="21" alt="VK" />
-            </a>
-            <a href="https://www.linkedin.com" target="_blank">
-              <img src="/img/linkedin.svg" width="25" height="21" alt="Linkedin" />
-            </a>
-          </div>
-        </div>
 
-        {{!-- <nav class="footer_nav">
-          <a class="footer_nav-link" href="#">TO HOME</a>
-        </nav> --}}
-      </div>
-    </div>
-  </footer>
+  {{>footer}}
 </body>
 
 </html>
