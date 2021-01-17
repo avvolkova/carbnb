@@ -1,15 +1,17 @@
 const mongoose = require("mongoose");
 const Article = require("../models/article");
-
+    
 module.exports = mongoose.connect(
-    "mongodb+srv://Alexandr:12345@cluster0.2ixnd.mongodb.net/carBnB?retryWrites=true&w=majority", {
-        useNewUrlParser: true,
-        useFindAndModify: true,
-        useUnifiedTopology: true,
-    }
+  "mongodb+srv://Alexandr:12345@cluster0.2ixnd.mongodb.net/carBnB?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useFindAndModify: true,
+    useUnifiedTopology: true,
+  }
 );
 
 // const auto = new Article({
+
 //     carName: "mazda",
 //     transmission: "auto",
 //     productionYear: 1952,

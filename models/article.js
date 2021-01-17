@@ -7,7 +7,7 @@ const ArticleSchema = new mongoose.Schema({
         required: true,
     },
     carImg: {
-        type: String,
+        img: String,
     },
     carOwner: {
         type: mongoose.Schema.Types.ObjectId,
@@ -33,6 +33,9 @@ const ArticleSchema = new mongoose.Schema({
     },
     busyIntervals: {
         type: Array,
+    },
+    img: {
+      type: String
     }
 });
 

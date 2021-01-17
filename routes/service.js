@@ -1,16 +1,16 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const mongoose = require('mongoose');
-const Article = require('../models/article')
+const mongoose = require("mongoose");
+const Article = require("../models/article");
 
-const Moment = require('moment');
-const MomentRange = require('moment-range');
+const Moment = require("moment");
+const MomentRange = require("moment-range");
 
 const moment = MomentRange.extendMoment(Moment);
 
 /* отрисовывает главную страницу */
-router.get('/', function(req, res, next) {
-    res.render('main');
+router.get("/", function (req, res, next) {
+  res.render("main");
 });
 
 /* осуществляет поиск и отрисовывает страницу с результатами поиска */
