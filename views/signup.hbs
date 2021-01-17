@@ -21,7 +21,10 @@
       <input type="email" name="email" class="form-control" placeholder="Электронная почта" required>
     </div>
     <div class="btn-lg">
-    <button class="btn  btn-primary btn-block" type="submit" >Войти</button>
+    <button class="btn  btn-primary btn-block" type="submit" >Зарегистрироваться</button>
+      {{#if notFound}}
+      <div class="">Пользователь уже существует</div>
+      {{/if}}
   </div>
    </form>
 
