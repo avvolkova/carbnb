@@ -582,6 +582,10 @@ h6 {
     margin-bottom: 30%;
 }
 
+.form-signin {
+    margin-bottom: 40px;
+}
+
 .buttonMain {
     display: inline-block;
     font-size: 20px;

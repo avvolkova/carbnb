@@ -1,53 +1,6 @@
-<!doctype html>
-<html lang="en">
+  <title>Авторизоваться</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Jekyll v4.1.1">
-  <title>авторизация</title>
-
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/floating-labels/">
-
-  <!-- Bootstrap core CSS -->
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style/assets/dist/css/bootstrap.min.css">
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-
-</head>
-
-
-{{!-- <form class="transparent">
-  <div class="form-inner">
-    <h3>Регистрация</h3>
-    <label for="username">Имя пользователя</label>
-    <input type="text" id="username">
-    <label for="password">Пароль</label>
-    <input id="password" type="password">
-    <input type="checkbox" id="custom-checkbox">
-    <label for="custom-checkbox">Запомнить меня</label>
-    <input type="submit" value="Отправить">
-  </div>
-</form> --}}
-
+ 
 <form class="form-signin" action="/users/login" method="post">
   <div class="autorization">
     <div class="text-center mb-4">
@@ -56,19 +9,25 @@
     </div>
     <div class="autorization">
       <div class="form-label-group">
-        <label class ="textInput" for="inputEmail">Имя пользователя<br></label>
-        <input name="nameUser" type="text" id="inputEmail" class="form-control" placeholder="Введите имя" required
+        <label class ="textInput" for="name">Имя пользователя<br></label>
+        <input name="name" type="text" id="inputEmail" class="form-control" placeholder="Введите имя" required
           autofocus>
       </div>
 
       <div class="form-label-group">
-        <label class ="textInput" for="inputPassword">Пароль<br></label>
+        <label class ="textInput" for="password">Пароль<br></label>
         <input name="passwordUser" type="password" id="inputPassword" class="form-control" placeholder="Пароль"
           required>
       </div>
 
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+     {{#if notFound}}
+      <div class="">Пользователь не найден</div>
+     {{/if}}
+      {{#if wrongPassword}}
+      <div class="">Неверный пароль</div>
+      {{/if}}
     </div>
   </div>
 </form>
