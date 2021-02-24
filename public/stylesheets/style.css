@@ -1,6 +1,7 @@
 body {
     font-family: "Montserrat", sans-serif;
     min-height: 10vh;
+    margin: 0;
 }
 
 *,
@@ -142,13 +143,12 @@ h6 {
 }
 
 .intro_photo {
+    max-height: 600px;
     bottom: 270px;
-    left: 500px;
     z-index: 1;
     min-width: 400px;
     min-height: 400px;
     padding-left: 40px;
-    background-color: #bbbbcc;
 }
 
 .social {
@@ -249,10 +249,8 @@ h6 {
 
 .footer {
     background-color: black;
-    padding: 0.6rem;
-    position: absolute;
-    /* top: 100%; */
-    width: 99%;
+    padding: 0.6rem 0;
+    display: block;
 }
 
 .footer_inner {
@@ -403,6 +401,10 @@ h6 {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+}
+
+.mainForm {
+    margin-bottom: -2%;
 }
 
 .inputMain {

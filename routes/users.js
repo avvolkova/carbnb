@@ -45,7 +45,6 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', async function(req, res) {
     if (req.body) {
         const isExist = await User.findOne({ name: req.body.name })
-        console.log(isExist);
         if (!isExist) {
             console.log('here');
             const newUser = new User({
@@ -53,7 +52,7 @@ router.post('/signup', async function(req, res) {
                 password: req.body.password,
                 email: req.body.email,
                 isCarOwner: false,
-                img: '../public/img/user-avatar.jpg',
+                img: '/img/user-avatar.jpg',
             });
             await newUser.save();
             req.session.userID = newUser._id;
